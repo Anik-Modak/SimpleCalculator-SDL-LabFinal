@@ -1,104 +1,82 @@
 package com.example.cse.samplecalculator_sdl_labfinal;
 
 public class Model {
-    private static String var1 = "";
-    private static String var2 = "";
 
-    public static void SetLastNumber(String _var2)
-    {
-        var2 = var2 + _var2;
-    }
-
-    public static String GetLastNumber()
-    {
-        return var2;
-    }
-
-    public static void SetCurrentNumber(String _var1)
-    {
-        var1 = var1 + _var1;
-    }
-
-    public static String GetCurrentNumber()
-    {
-        return var1;
-    }
-
-    public static String Add()
+    public static String Add(String var2, String var1)
     {
         double a = Double.parseDouble(var2);
         double b = Double.parseDouble(var1);
 
         double res = a+b;
 
-        String result = String.format("%.1f",res);
+        String result = String.format("%.3f",res);
 
         return result;
     }
 
-    public static String Subtract()
+    public static String Subtract(String var2, String var1 )
     {
         double a = Double.parseDouble(var2);
         double b = Double.parseDouble(var1);
 
         double res = a-b;
 
-        String result = String.format("%.1f",res);
+        String result = String.format("%.3f",res);
 
         return result;
     }
 
-    public static String Multiply()
+    public static String Multiply(String var2, String var1)
     {
         double a = Double.parseDouble(var2);
         double b = Double.parseDouble(var1);
 
         double res = a*b;
 
-        String result = String.format("%.1f",res);
+        String result = String.format("%.3f",res);
 
         return result;
     }
 
-    public static String Division()
+    public static String Division(String var2, String var1)
     {
         double a = Double.parseDouble(var2);
         double b = Double.parseDouble(var1);
 
-        if(b == 0.0) return "MATH ERROR";
+        if(b == 0.0) return "Nan";
 
         double res = a/b;
 
-        String result = String.format("%.1f",res);
+        String result = String.format("%.3f",res);
 
         return result;
     }
 
-    public static String Power()
+    public static String Power(String var2, String var1)
     {
         double a = Double.parseDouble(var2);
         double b = Double.parseDouble(var1);
 
         double res = Math.pow(a,b);
 
-        String result = String.format("%.1f",res);
+        String result = String.format("%.3f",res);
 
         return result;
     }
 
-    public static String Mod()
+    public static String Mod(String var2, String var1)
     {
         double a = Double.parseDouble(var2);
         double b = Double.parseDouble(var1);
 
         double res = a%b;
 
-        String result = String.format("%.1f",res);
+        String result = String.format("%.3f",res);
 
         return result;
     }
 
-    public static String Sqrt()
+    public static String Sqrt(String var1)
     {
         double b = Double.parseDouble(var1);
 
@@ -106,30 +84,8 @@ public class Model {
 
         double res = Math.sqrt(b);
 
-        String result = String.format("%.1f",res);
+        String result = String.format("%.3f",res);
 
         return result;
-    }
-
-    public static void Clear()
-    {
-        var2 = "";
-        var1 = "";
-    }
-
-    public static void DeleteLastNumber()
-    {
-        StringBuilder build = new StringBuilder(var2);
-        build.deleteCharAt(var2.length()-1);
-        var2 = "";
-        var2 += build;
-    }
-
-    public static void DeleteCurrentNumber()
-    {
-        StringBuilder build = new StringBuilder(var1);
-        build.deleteCharAt(var1.length()-1);
-        var1 = "";
-        var1 += build;
     }
 }

@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import static java.lang.System.out;
+
 public class MainActivity extends AppCompatActivity {
 
     TextView resultDisplay;
@@ -35,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     Button buttonEqual;
 
     ImageButton imgButtonDlt;
-
+    boolean flag = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -140,6 +142,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 inputDisplay.setText(Controller.setOperation("+"));
+                flag = false;
             }
         });
 
@@ -147,6 +150,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 inputDisplay.setText(Controller.setOperation("-"));
+                flag = false;
             }
         });
 
@@ -154,6 +158,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 inputDisplay.setText(Controller.setOperation("*"));
+                flag = false;
             }
         });
 
@@ -161,6 +166,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 inputDisplay.setText(Controller.setOperation("/"));
+                flag = false;
             }
         });
 
@@ -168,6 +174,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 inputDisplay.setText(Controller.setOperation("^"));
+                flag = false;
             }
         });
 
@@ -175,13 +182,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 inputDisplay.setText(Controller.setOperation("%"));
+                flag = false;
             }
         });
 
         buttonDot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                inputDisplay.setText(Controller.setOperation("."));
+                if (false == flag){
+                    inputDisplay.setText(Controller.setOperation("."));
+                    flag = true;
+                }
             }
         });
 
@@ -189,6 +200,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 inputDisplay.setText(Controller.setOperation("Sqrt of "));
+                flag = false;
             }
         });
 
@@ -198,6 +210,7 @@ public class MainActivity extends AppCompatActivity {
                 String clearAll = Controller.setOperation("clear");
                 inputDisplay.setText(clearAll);
                 resultDisplay.setText(clearAll);
+                flag = false;
                 return true;
             }
         });
@@ -206,6 +219,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 inputDisplay.setText(Controller.setOperation("delete"));
+                flag = false;
             }
         });
 
@@ -215,6 +229,7 @@ public class MainActivity extends AppCompatActivity {
                 String clearAll = Controller.setOperation("clear");
                 inputDisplay.setText(clearAll);
                 resultDisplay.setText(clearAll);
+                flag = false;
             }
         });
 
@@ -222,6 +237,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 resultDisplay.setText(Controller.setOperation("="));
+                flag = false;
             }
         });
     }

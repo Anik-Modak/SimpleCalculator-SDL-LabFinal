@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SampleCalculator-SDL-LabFinal</string>
+    <string name="app_name">SampleCalculator</string>
     <string name="_C">C</string>
     <string name="sqrtRootSign">√</string>
     <string name="powerSign">^</string>
