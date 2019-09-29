@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
         buttonDiv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                inputDisplay.setText(CalculatorController.setOperation("/"));
+                inputDisplay.setText(Controller.setOperation("/"));
             }
         });
 
